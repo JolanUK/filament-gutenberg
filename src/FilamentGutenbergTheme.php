@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace JolanUK\FilamentGutenberg;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -8,17 +8,17 @@ use Filament\Support\Assets\Theme;
 use Filament\Support\Color;
 use Filament\Support\Facades\FilamentAsset;
 
-class Skeleton implements Plugin
+class FilamentGutenberg implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'filament-gutenberg';
     }
 
     public function register(Panel $panel): void
     {
         FilamentAsset::register([
-            Theme::make('skeleton', __DIR__ . '/../resources/dist/skeleton.css'),
+            Theme::make('filament-gutenberg', __DIR__ . '/../resources/dist/filament-gutenberg.css'),
         ]);
 
         $panel
@@ -29,7 +29,7 @@ class Skeleton implements Plugin
             ->dangerColor(Color::Rose)
             ->successColor(Color::Green)
             ->grayColor(Color::Gray)
-            ->theme('skeleton');
+            ->theme('filament-gutenberg');
     }
 
     public function boot(Panel $panel): void
